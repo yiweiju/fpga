@@ -15,9 +15,7 @@ module tb_fulladdersec;
   );
 
   initial begin
-    $monitor("Time: %0t | k1 = %b  k2 = %b  k3 = %b | sum = %b  c = %b", $time, KEY1,KEY2,KEY3, SUM, C);
-    $dumpfile("out.vcd");
-    $dumpvars;
+    $monitor("Time: %0t | k1 = %b  k2 = %b  k3 = %b | sum = %b  c = %b", $time, KEY1,KEY2,KEY3, SUM, C)
 
     KEY1 = 0;
     KEY2 = 0;
