@@ -1,9 +1,9 @@
 module asynff (
-input wire sys_clk , //Clock input. we Will use system clock, 50M Hz
-input wire sys_rst_n, //Reset button
-input wire key_in , //Input button
+input wire sys_clk , 
+input wire sys_rst_n,
+input wire key_in , 
 
-output reg led_out //Output
+output reg led_out 
  );
 
  always@(posedge sys_clk or negedge sys_rst_n) begin
