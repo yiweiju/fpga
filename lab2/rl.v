@@ -1,7 +1,7 @@
 module rl (
     input wire clk,
     input wire res,
-    output reg  [3:0] led
+    output wire [3:0] led
 );
 
 reg [24:0] cnt;
@@ -27,6 +27,6 @@ always @(posedge clk or negedge res) begin
     end
 end
     
-assign led = led_state;
+assign led = ~led_state;
 
 endmodule
