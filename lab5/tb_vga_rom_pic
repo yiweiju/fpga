@@ -1,0 +1,45 @@
+`timescale 1ns/1ps
+
+module tb_vga_rom_pic;
+
+  // Testbench variables
+  reg sys_clk;         // System Clock
+  reg sys_rst_n;       // Reset signal
+  wire hsync;          // Line sync signal
+  wire vsync;          // Field sync signal
+  wire [15:0] rgb;     // RGB565 color data
+
+  // Clock generation
+  initial begin
+    sys_clk = 1'b0;
+    forever #10 sys_clk = ~sys_clk; // Generate a 50MHz clock
+  end
+
+  // Reset signal generation
+  initial begin
+    sys_rst_n = 1'b0;
+    #100; // Hold reset low for 100 ns
+    sys_rst_n = 1'b1;
+  end
+
+  // DUT (Device Under Test) instantiation
+  vga_rom_pic uut (
+    .sys_clk(sys_clk),
+    .sys_rst_n(sys_rst_n),
+    .hsync(hsync),
+    .vsync(vsync),
+    .rgb(rgb)
+  );
+
+  // Monitor output
+  initial begin
+    $monitor("Time = %t, hsync = %b, vsync = %b, rgb = %h", $time, hsync, vsync, rgb);
+  end
+
+  // Simulation runtime
+  initial begin
+    #100000; // Run simulation for 100,000 ns
+    $stop;   // Stop simulation
+  end
+
+endmodule
