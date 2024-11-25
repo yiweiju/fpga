@@ -1,0 +1,32 @@
+module key_top
+(
+    input I_sysclk,  
+    input I_rstn,    
+    input I_key1,    
+    output [3:0] O_led 
+);
+
+reg [3:0] led_r;       
+wire key1_down;        
+
+assign O_led = led_r;  
+
+
+always @(posedge I_sysclk or negedge I_rstn) begin
+    if (I_rstn == 1'b0) begin
+        led_r <= 4'b0111; 
+    end else if (key1_down) begin
+        led_r <= {led_r[2:0], led_r[3]}; 
+    end
+end
+
+
+key key_u1 
+(
+    .I_sysclk(I_sysclk),
+    .I_rstn(I_rstn),
+    .I_key(I_key1),
+    .O_key_down(key1_down),
+    .O_key_up()
+);
+endmodule
