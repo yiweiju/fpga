@@ -1,0 +1,74 @@
+module key (
+    input I_sysclk,
+    input I_rstn,
+    input I_key,
+    output O_key_down,
+    output O_key_up
+);
+
+parameter T10MS = (50000 - 1'b1); 
+parameter KEY_S0 = 2'd0;                    
+parameter KEY_S1 = 2'd1;
+parameter KEY_S2 = 2'd2;
+parameter KEY_S3 = 2'd3;
+
+reg [24:0] t10ms_cnt = 25'd0;
+reg [3:0] key_r = 4'd0;      
+
+reg [1:0] key_s = 2'b0;
+reg [1:0] key_s_r = 2'b0;
+wire t10ms_done;
+
+
+assign t10ms_done = (t10ms_cnt == T10MS);
+assign O_key_down = (key_s == KEY_S2) && (key_s_r == KEY_S1);
+assign O_key_up = (key_s == KEY_S0) && (key_s_r == KEY_S3);
+
+
+always @(posedge I_sysclk or negedge I_rstn) begin
+    if (I_rstn == 1'b0) begin
+        t10ms_cnt <= 25'd0; 
+    end else if (t10ms_cnt < T10MS) begin
+        t10ms_cnt <= t10ms_cnt + 1'b1; 
+    end else begin
+        t10ms_cnt <= 25'd0; 
+    end
+end
+
+always @(posedge I_sysclk) begin
+    key_s_r <= key_s; 
+end
+
+always @(posedge I_sysclk) begin
+    key_r <= {key_r[2:0], I_key}; 
+end
+
+always @(posedge I_sysclk or negedge I_rstn) begin
+    if (I_rstn == 1'b0) begin
+        key_s <= KEY_S0; 
+    end else if (t10ms_done) begin
+        case (key_s)
+            KEY_S0: begin
+                if (!key_r[3])
+                    key_s <= KEY_S1;
+            end
+            KEY_S1: begin
+                if (!key_r[3])
+                    key_s <= KEY_S2;
+                else
+                    key_s <= KEY_S0;
+            end
+            KEY_S2: begin
+                if (key_r[3])
+                    key_s <= KEY_S3;
+            end
+            KEY_S3: begin 
+                if (key_r[3])
+                    key_s <= KEY_S0; 
+            end            
+        endcase
+    end
+end
+
+endmodule
+
