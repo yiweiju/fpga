@@ -1,0 +1,113 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'u_pll_clk|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -9.221
+TNS   : -87.629
+
+Type  : Slow 1200mV 85C Model Setup 'Game_Play:u_Game_Play|move_en'
+Slack : -5.276
+TNS   : -1209.844
+
+Type  : Slow 1200mV 85C Model Setup 'sys_clk_50'
+Slack : 13.294
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'sys_clk_50'
+Slack : 0.452
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'u_pll_clk|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.453
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Game_Play:u_Game_Play|move_en'
+Slack : 0.464
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Game_Play:u_Game_Play|move_en'
+Slack : -1.487
+TNS   : -499.632
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'sys_clk_50'
+Slack : 9.759
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'u_pll_clk|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 19.702
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'u_pll_clk|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -8.333
+TNS   : -78.886
+
+Type  : Slow 1200mV 0C Model Setup 'Game_Play:u_Game_Play|move_en'
+Slack : -5.035
+TNS   : -1133.215
+
+Type  : Slow 1200mV 0C Model Setup 'sys_clk_50'
+Slack : 13.591
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'sys_clk_50'
+Slack : 0.401
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'u_pll_clk|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.402
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Game_Play:u_Game_Play|move_en'
+Slack : 0.417
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Game_Play:u_Game_Play|move_en'
+Slack : -1.487
+TNS   : -499.632
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'sys_clk_50'
+Slack : 9.721
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'u_pll_clk|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 19.669
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'u_pll_clk|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -3.715
+TNS   : -33.558
+
+Type  : Fast 1200mV 0C Model Setup 'Game_Play:u_Game_Play|move_en'
+Slack : -1.944
+TNS   : -351.128
+
+Type  : Fast 1200mV 0C Model Setup 'sys_clk_50'
+Slack : 17.028
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'sys_clk_50'
+Slack : 0.186
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'u_pll_clk|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.187
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Game_Play:u_Game_Play|move_en'
+Slack : 0.194
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Game_Play:u_Game_Play|move_en'
+Slack : -1.000
+TNS   : -336.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'sys_clk_50'
+Slack : 9.411
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'u_pll_clk|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 19.732
+TNS   : 0.000
+
+------------------------------------------------------------
